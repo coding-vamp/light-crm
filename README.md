@@ -105,15 +105,6 @@ See [VERIFICATION.md](VERIFICATION.md) for checks actually performed and their l
 
 Version one is a single-user, single-workspace, single-currency app. No CSV import, recurring tasks, reminders/notifications, rich-text notes, automatic backups, cloud sync, multiwindow editing, or document preview is included. There is no general undo for committed edits/deletions; use an exported backup to recover. Individual regular files are supported; folders, Finder aliases, and symlinks are not. Filenames may repeat safely. Very large record collections are not a target: records are loaded into memory and filtering is local. File work is off the main actor; very large database replacements may still briefly occupy it. Full VoiceOver and multi-locale testing remain useful contributor work.
 
-## Before publishing
-
-- Review the diff. The MIT copyright holder is **Gabriel Cortez**.
-- Remove already-tracked `xcuserdata` and `.DS_Store` entries from Git's index while preserving local files; ignore rules do not untrack previously committed files. Existing user scheme changes were intentionally preserved.
-- Audit both current files and Git history for client data, secrets, signing artifacts, and machine-specific files.
-- Enable GitHub private vulnerability reporting (see [SECURITY.md](SECURITY.md)).
-- Run CI on the new repository and enable branch protections if desired. No repository was created, pushed, or released by this implementation.
-- Add screenshots using fictional data only; confirm distribution signing/notarization separately before offering binaries.
-
 ## License
 
 App code: [MIT](LICENSE). Outfit: SIL Open Font License 1.1, bundled with the font. Apple system frameworks and SF Symbols remain subject to Apple's terms.
