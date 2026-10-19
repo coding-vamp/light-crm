@@ -2,6 +2,8 @@
 
 A native, offline macOS CRM for a one-person web agency. Keep clients, projects, documents, and next steps in one local workspace. Built with SwiftUI and SwiftData, with an original flat visual identity and bundled Outfit typography.
 
+![Light CRM running on macOS, showing the overview dashboard with pipeline totals, upcoming tasks, and client follow-ups.](docs/images/light-crm-overview.png)
+
 There are no accounts, servers, cloud sync, analytics, subscriptions, or runtime downloads. Website and email actions explicitly open your chosen Mac application.
 
 ## What works
