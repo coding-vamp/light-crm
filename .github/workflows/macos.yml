@@ -1,0 +1,29 @@
+name: macOS build and core tests
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: macos-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-and-test:
+    runs-on: xcode-27
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Show toolchain
+        run: xcodebuild -version
+      - name: Build native macOS app without signing
+        run: >-
+          xcodebuild build -project 'Light CRM.xcodeproj' -scheme 'Light CRM'
+          -destination 'platform=macOS' -derivedDataPath "$RUNNER_TEMP/LightCRMBuild"
+          CODE_SIGNING_ALLOWED=NO DEVELOPMENT_TEAM=
+      - name: Test persistence and backups
+        run: swift test --scratch-path "$RUNNER_TEMP/LightCRMTests"
+      - name: Check design contrast
+        run: python3 scripts/check-contrast.py

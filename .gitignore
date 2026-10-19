@@ -1,0 +1,40 @@
+# Xcode and Swift build products
+.DS_Store
+build/
+DerivedData/
+.build/
+.swiftpm/
+*.xcuserstate
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.xcresult/
+*.dSYM/
+*.dSYM.zip
+*.ipa
+*.app/
+# Local signing and secrets
+Local.xcconfig
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.cer
+*.mobileprovision
+*.provisionprofile
+# Never publish workspace data or backup packages
+*.store
+*.store-shm
+*.store-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.sqlite3
+Attachments/
+Safety Backups/
+*.lightcrmbackup/
+# Local agent and machine configuration
+.codex/
+.agents/
+.aws/
